@@ -1,13 +1,15 @@
 import { mongo } from 'mongoose';
 import connectDB from './config/db.js';
 import notesRoutes from './routes/notesRoutes.js';
-import express from 'express';
 import dotenv from 'dotenv';
-dotenv.config();
-console.log(process.env.MONGO_URI);
+import express from 'express';
 const app = express();
-app.use("/api/notes", notesRoutes);
+dotenv.config();
+app.use(express.json());
 connectDB()
+app.use("/api/notes", notesRoutes);
+
+
 /*app.get('/api/notes', (req, res) => {
     res.send("you 10 got thescdewff  10 notes");
 })
@@ -24,3 +26,4 @@ app.delete('/api/notes/:id', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
+//mongodb+srv://riti12233344444:7zGm4TXuwXSmbfa9@cluster0.hmrnie2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
