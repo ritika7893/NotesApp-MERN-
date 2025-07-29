@@ -26,4 +26,3 @@ app.delete('/api/notes/:id', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
-//mongodb+srv://riti12233344444:7zGm4TXuwXSmbfa9@cluster0.hmrnie2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
